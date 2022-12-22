@@ -144,10 +144,10 @@ call gruvbox_material#highlight('MatchParen', s:palette.none, s:palette.bg4)
 call gruvbox_material#highlight('NonText', s:palette.bg5, s:palette.none)
 call gruvbox_material#highlight('Whitespace', s:palette.bg5, s:palette.none)
 call gruvbox_material#highlight('SpecialKey', s:palette.bg5, s:palette.none)
-call gruvbox_material#highlight('Pmenu', s:palette.fg1, s:palette.bg3)
+call gruvbox_material#highlight('Pmenu', s:palette.fg1, s:palette.bg0)
 call gruvbox_material#highlight('PmenuSbar', s:palette.none, s:palette.bg3)
 if s:configuration.menu_selection_background ==# 'grey'
-  call gruvbox_material#highlight('PmenuSel', s:palette.bg3, s:palette.grey2)
+  call gruvbox_material#highlight('PmenuSel', s:palette.bg1, s:palette.grey1)
 elseif s:configuration.menu_selection_background ==# 'green'
   call gruvbox_material#highlight('PmenuSel', s:palette.bg3, s:palette.bg_green)
 elseif s:configuration.menu_selection_background ==# 'red'
@@ -157,8 +157,8 @@ else
 endif
 highlight! link WildMenu PmenuSel
 call gruvbox_material#highlight('PmenuThumb', s:palette.none, s:palette.grey0)
-call gruvbox_material#highlight('NormalFloat', s:palette.fg1, s:palette.bg3)
-call gruvbox_material#highlight('FloatBorder', s:palette.grey1, s:palette.bg3)
+call gruvbox_material#highlight('NormalFloat', s:palette.fg0, s:palette.bg0)
+call gruvbox_material#highlight('FloatBorder', s:palette.grey0, s:palette.bg0)
 call gruvbox_material#highlight('Question', s:palette.yellow, s:palette.none)
 if s:configuration.spell_foreground ==# 'none'
   call gruvbox_material#highlight('SpellBad', s:palette.none, s:palette.none, 'undercurl', s:palette.red)
@@ -1112,6 +1112,7 @@ call gruvbox_material#highlight('CmpItemAbbrMatch', s:palette.green, s:palette.n
 call gruvbox_material#highlight('CmpItemAbbrMatchFuzzy', s:palette.green, s:palette.none, 'bold')
 highlight! link CmpItemAbbr Fg
 highlight! link CmpItemAbbrDeprecated Grey
+highlight! link CmpBorder Grey
 highlight! link CmpItemMenu Fg
 highlight! link CmpItemKind Yellow
 highlight! link CmpItemKindText Fg
@@ -1139,6 +1140,21 @@ highlight! link CmpItemKindStruct Yellow
 highlight! link CmpItemKindEvent Orange
 highlight! link CmpItemKindOperator Orange
 highlight! link CmpItemKindTypeParameter Yellow
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+" blue
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! link CmpItemAbbrMatchFuzzy CmpItemAbbrMatch
+" light blue
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! link CmpItemKindInterface CmpItemKindVariable
+highlight! link CmpItemKindText CmpItemKindVariable
+" pink
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! link CmpItemKindMethod CmpItemKindFunction
+" front
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! link CmpItemKindProperty CmpItemKindKeyword
+highlight! link CmpItemKindUnit CmpItemKindKeyword
 " }}}
 " folke/trouble.nvim {{{
 highlight! link TroubleText Fg
